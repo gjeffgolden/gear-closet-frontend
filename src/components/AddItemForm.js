@@ -32,7 +32,9 @@ export default function AddItemForm({ userId, addItem }) {
         "Climbing",
         "Biking",
         "Camping",
-        "Watersports"
+        "Water",
+        "Snow",
+        "Pet"
     ]
     return choices.map(option => <MenuItem key={option} value={option}>{option}</MenuItem>)
 }
@@ -104,7 +106,7 @@ export default function AddItemForm({ userId, addItem }) {
                     <MenuItem value="4">4</MenuItem>
                     <MenuItem value="5">5</MenuItem>
                 </TextField>
-                <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em"}}>Add</Button>
+                <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579"}}>Add</Button>
             </form>
         </div>
     )

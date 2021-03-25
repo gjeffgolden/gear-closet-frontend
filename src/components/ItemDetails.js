@@ -32,7 +32,7 @@ export default function ItemDetails({ selectedItem, setToggleDetails, deleteItem
 
     return (
         <Container className="item-details-container">
-            <Card className="item-details-card" onClick={() => handleClick()}>
+            <Card onClick={() => handleClick()}>
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}

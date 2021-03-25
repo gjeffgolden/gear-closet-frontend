@@ -29,7 +29,7 @@ export default function LoginForm(props) {
             <TextField name="username" variant="outlined" value={formData.username} margin="dense" onChange={handleChange}/>
             <FormLabel>Password</FormLabel>
             <TextField name="password" variant="outlined" type="password" value={formData.password} margin="dense" onChange={handleChange}/>
-            <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em"}}>Log In</Button>
+            <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579"}}>Log In</Button>
             <Button size="small" onClick={() => props.toggleRegistered()}>Need to Register?</Button>
         </form>
     )

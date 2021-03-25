@@ -25,7 +25,7 @@ export default function ItemsContainer({ items, showDetails, selectedItem, setTo
     }
 
     return (
-        <Container maxWidth="xl">
+        <Container id="items-container-container" maxWidth="xl">
             <div className="items-container">
                 {toggleDetails
                     ? displayDetails()

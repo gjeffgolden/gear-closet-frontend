@@ -40,7 +40,7 @@ export default function RegisterForm(props) {
             <TextField name="last_name" variant="outlined" value={formData.last_name} margin="dense" onChange={handleChange}/>
             <FormLabel>Email Address</FormLabel>
             <TextField name="email" variant="outlined" value={formData.email} margin="dense" onChange={handleChange}/>
-            <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em"}}>Register</Button>
+            <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579"}}>Register</Button>
             <Button size="small" onClick={() => props.toggleRegistered()}>Already registered? Click here to login.</Button>
         </form>
     )

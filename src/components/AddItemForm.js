@@ -117,7 +117,7 @@ export default function AddItemForm({ userId,
             <form className="add-item-form" onSubmit={handleSubmit}>
                 <Typography gutterBottom variant="h4" component="h2" style={{alignSelf: "center"}}>Create New Item</Typography>
                 <TextField type="file" variant="outlined" onChange={handleImage}/>
-                <Button variant="contained" onClick={handleUpload} style={{width: "120px", alignSelf: "center", marginTop: "0.2em"}}>Upload 📸</Button>
+                <Button variant="contained" onClick={handleUpload} style={{width: "120px", alignSelf: "center", marginTop: "0.5em"}}>Upload 📸</Button>
                 <TextField label="Nickname" name="nickname" variant="outlined" value={formData.nickname} margin="dense" onChange={handleChange}/>
                 <TextField label="Brand" name="brand" variant="outlined" value={formData.brand} margin="dense" onChange={handleChange}/>
                 <TextField label="Model" name="model_name" variant="outlined" value={formData.model_name} margin="dense" onChange={handleChange}/>
@@ -135,7 +135,7 @@ export default function AddItemForm({ userId,
                     <MenuItem value="4">4</MenuItem>
                     <MenuItem value="5">5</MenuItem>
                 </TextField>
-                <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579"}}>Add</Button>
+                <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em"}}>Add</Button>
             </form>
         </div>
     )

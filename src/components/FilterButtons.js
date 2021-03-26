@@ -69,19 +69,19 @@ export default function FilterButtons({
     return (
         <Container maxWidth="xs" style={{margin: "0", display: "flex", flexFlow: "column"}}>
             <Typography gutterBottom variant="h3" component="h2" style={{alignSelf: "center"}}>Filter By Category</Typography>
-            <Button variant="contained" onClick={allClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "300px", alignSelf: "center", marginBottom: "0"}}>Show All</Button>
-            <Button variant="contained" onClick={upgradeClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "300px", alignSelf: "center", marginBottom: "0"}}>Needs Upgrade or Replacement</Button>
+            <Button variant="contained" onClick={allClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "300px", alignSelf: "center", marginBottom: "0"}}>Show All</Button>
+            <Button variant="contained" onClick={upgradeClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "300px", alignSelf: "center", marginBottom: "0"}}>Needs Upgrade or Replacement</Button>
             <Container className="filter-buttons-container" maxWidth="xs" style={{margin: "0", display: "flex"}}>
-                <Button variant="contained" onClick={apparelClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Apparel</Button>
-                <Button variant="contained" onClick={footwearClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Footwear</Button>
-                <Button variant="contained" onClick={accessoriesClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Accessories</Button>
-                <Button variant="contained" onClick={hikingClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Hiking</Button>
-                <Button variant="contained" onClick={climbingClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Climbing</Button>
-                <Button variant="contained" onClick={bikingClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Biking</Button>
-                <Button variant="contained" onClick={campingClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Camping</Button>
-                <Button variant="contained" onClick={snowClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Snow</Button>
-                <Button variant="contained" onClick={waterClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Water</Button>
-                <Button variant="contained" onClick={petClick} style={{backgroundColor: "#ff914d", margin: "1em", color: "#015579", width: "150px"}}>Pet</Button>
+                <Button variant="contained" onClick={apparelClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Apparel</Button>
+                <Button variant="contained" onClick={footwearClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Footwear</Button>
+                <Button variant="contained" onClick={accessoriesClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Accessories</Button>
+                <Button variant="contained" onClick={hikingClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Hiking</Button>
+                <Button variant="contained" onClick={climbingClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Climbing</Button>
+                <Button variant="contained" onClick={bikingClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Biking</Button>
+                <Button variant="contained" onClick={campingClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Camping</Button>
+                <Button variant="contained" onClick={snowClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Snow</Button>
+                <Button variant="contained" onClick={waterClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Water</Button>
+                <Button variant="contained" onClick={petClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "150px"}}>Pet</Button>
             </Container>
         </Container>
     )

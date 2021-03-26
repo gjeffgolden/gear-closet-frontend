@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import FormLabel from "@material-ui/core/FormLabel"
 import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
 
 export default function LoginForm(props) {
 
@@ -24,7 +25,7 @@ export default function LoginForm(props) {
 
     return (
         <form className="login-form" onSubmit={handleSubmit}>
-            <h1>Welcome to Gear Closet</h1>
+            <Typography gutterBottom variant="h3" component="h2" style={{alignSelf: "center", marginBottom: "1em", marginTop: "1em"}}>Welcome to Gear Closet</Typography>
             <FormLabel>Username</FormLabel>
             <TextField name="username" variant="outlined" value={formData.username} margin="dense" onChange={handleChange}/>
             <FormLabel>Password</FormLabel>

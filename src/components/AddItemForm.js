@@ -2,9 +2,25 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from "@material-ui/core/Button"
 import MenuItem from "@material-ui/core/MenuItem"
+import Typography from "@material-ui/core/Typography"
 import { storage } from "../firebase/firebase"
+import FilterButtons from './FilterButtons'
 
-export default function AddItemForm({ userId, addItem }) {
+export default function AddItemForm({ userId, 
+    addItem, 
+    showAllItems, 
+    filterClimbing,
+    filterApparel,
+    filterFootwear,
+    filterHiking,
+    filterCamping,
+    filterAccessories,
+    filterBiking,
+    filterSnow,
+    filterWater,
+    filterPet,
+    filterNeedsUpgrade
+}) {
 
     const [file, setFile] = useState(null)
     const [url, setUrl] = useState("")
@@ -59,7 +75,7 @@ export default function AddItemForm({ userId, addItem }) {
         })
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = () => {
         addItem(formData)
     }
 
@@ -69,8 +85,8 @@ export default function AddItemForm({ userId, addItem }) {
 
     const handleUpload = (event) => {
         event.preventDefault();
-        const uploadTask = storage.ref(`/images/${file.name}`).put(file);
-        uploadTask.on("state_changed", console.log, console.error, () => {
+        const uploadImg = storage.ref(`/images/${file.name}`).put(file);
+        uploadImg.on("state_changed", console.log, console.error, () => {
             storage
             .ref("images")
             .child(file.name)
@@ -84,11 +100,24 @@ export default function AddItemForm({ userId, addItem }) {
 
     return (
         <div className="add-item-container">
-            <h2> Placeholder for something nifty</h2>
+            <FilterButtons 
+                showAllItems={showAllItems} 
+                filterClimbing={filterClimbing} 
+                filterApparel={filterApparel}
+                filterFootwear={filterFootwear}
+                filterAccessories={filterAccessories}
+                filterHiking={filterHiking}
+                filterCamping={filterCamping}
+                filterBiking={filterBiking}
+                filterSnow={filterSnow}
+                filterWater={filterWater}
+                filterPet={filterPet}
+                filterNeedsUpgrade={filterNeedsUpgrade}
+            />
             <form className="add-item-form" onSubmit={handleSubmit}>
-                <h3>Create New Item</h3>
+                <Typography gutterBottom variant="h4" component="h2" style={{alignSelf: "center"}}>Create New Item</Typography>
                 <TextField type="file" variant="outlined" onChange={handleImage}/>
-                <Button onClick={handleUpload}>Upload</Button>
+                <Button variant="contained" onClick={handleUpload} style={{width: "120px", alignSelf: "center", marginTop: "0.2em"}}>Upload 📸</Button>
                 <TextField label="Nickname" name="nickname" variant="outlined" value={formData.nickname} margin="dense" onChange={handleChange}/>
                 <TextField label="Brand" name="brand" variant="outlined" value={formData.brand} margin="dense" onChange={handleChange}/>
                 <TextField label="Model" name="model_name" variant="outlined" value={formData.model_name} margin="dense" onChange={handleChange}/>

@@ -10,6 +10,7 @@ import UserHome from './pages/UserHome'
 function App() {
 
   const [items, setItems] = useState([])
+  const [allItems, setAllItems] = useState([])
   const [user, setUser] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [selectedItem, setSelectedItem] = useState([])
@@ -26,6 +27,7 @@ function App() {
         .then(results => {
             setUser(results)
             setItems(results.items)
+            setAllItems(results.items)
             setIsLoggedIn(true)
         })
     }
@@ -97,6 +99,65 @@ function App() {
     let search = items.find(item => item === selectedItem)
     setSelectedItem(search)
   }
+
+  const showAllItems = () => {
+    setItems(allItems)
+  }
+
+  const filterNeedsUpgrade = () => {
+    const array = allItems.filter(item => item.rating < 3 || item.condition === "Fair" || item.condition === "Poor" || item.model_year < 2016)
+    setItems(array)
+  }
+
+  const filterClimbing = () => {
+    const climbingArray = allItems.filter(item => item.item_type === "Climbing")
+    setItems(climbingArray)
+  }
+
+  const filterApparel = () => {
+    const apparelArray = allItems.filter(item => item.item_type === "Shell" || item.item_type === "Insulation" || item.item_type === "Baselayer")
+    setItems(apparelArray)
+  }
+
+  const filterFootwear = () => {
+    const array = allItems.filter(item => item.item_type === "Footwear")
+    setItems(array)
+  }
+
+  const filterAccessories = () => {
+    const array = allItems.filter(item => item.item_type === "Accessory")
+    setItems(array)
+  }
+
+  const filterHiking = () => {
+    const array = allItems.filter(item => item.item_type === "Hiking")
+    setItems(array)
+  }
+
+  const filterCamping = () => {
+    const array = allItems.filter(item => item.item_type === "Camping")
+    setItems(array)
+  }
+
+  const filterBiking = () => {
+    const array = allItems.filter(item => item.item_type === "Biking")
+    setItems(array)
+  }
+
+  const filterSnow = () => {
+    const array = allItems.filter(item => item.item_type === "Snow")
+    setItems(array)
+  }
+
+  const filterWater = () => {
+    const array = allItems.filter(item => item.item_type === "Water")
+    setItems(array)
+  }
+
+  const filterPet = () => {
+    const array = allItems.filter(item => item.item_type === "Pet")
+    setItems(array)
+  }
   
   return (
     <Router>
@@ -115,6 +176,18 @@ function App() {
               isLoggedIn={isLoggedIn} 
               selectedItem={selectedItem} 
               showDetails={showDetails} 
+              showAllItems={showAllItems}
+              filterClimbing={filterClimbing}
+              filterApparel={filterApparel}
+              filterFootwear={filterFootwear}
+              filterAccessories={filterAccessories}
+              filterHiking={filterHiking}
+              filterCamping={filterCamping}
+              filterBiking={filterBiking}
+              filterSnow={filterSnow}
+              filterWater={filterWater}
+              filterPet={filterPet}
+              filterNeedsUpgrade={filterNeedsUpgrade}
             />
           </PrivateRoute>
         </Switch>

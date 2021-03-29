@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AddItemForm from '../components/AddItemForm'
 import ItemsContainer from '../containers/ItemsContainer'
+import Typography from "@material-ui/core/Typography"
 
 export default function UserHome(props) {
 
@@ -8,6 +9,10 @@ export default function UserHome(props) {
 
     return (
         <div>
+            {toggleDetails
+                ? null
+                : <Typography gutterBottom variant="h2" component="h2" style={{textAlign: "center", margin: "50px"}}>Welcome, {props.user.first_name}</Typography>
+            }
             {toggleDetails 
                 ? null
                 : <AddItemForm 

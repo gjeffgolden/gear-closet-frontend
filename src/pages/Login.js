@@ -13,7 +13,7 @@ export default function Login(props) {
     }
 
     return (
-        <Container className="login-form-container" maxWidth='sm'>
+        <Container className="login-form-container" maxWidth='lg' style={{height: "500px", marginTop: "50px" }}>
             {props.isLoggedIn
                 ? <Redirect to="/user" />
                 : null

@@ -5,6 +5,7 @@ import MenuItem from "@material-ui/core/MenuItem"
 import Typography from "@material-ui/core/Typography"
 import { storage } from "../firebase/firebase"
 import FilterButtons from './FilterButtons'
+import HeroImage from '../assets/HeroImage.png'
 
 export default function AddItemForm({ userId, 
     addItem, 
@@ -99,7 +100,7 @@ export default function AddItemForm({ userId,
     }
 
     return (
-        <div className="add-item-container">
+        <div className="add-item-container" style={{marginTop: "25px", backgroundImage: `url(${HeroImage})`, width: "100vw"}}>
             <FilterButtons 
                 showAllItems={showAllItems} 
                 filterClimbing={filterClimbing} 
@@ -114,8 +115,8 @@ export default function AddItemForm({ userId,
                 filterPet={filterPet}
                 filterNeedsUpgrade={filterNeedsUpgrade}
             />
-            <form className="add-item-form" onSubmit={handleSubmit}>
-                <Typography gutterBottom variant="h4" component="h2" style={{alignSelf: "center"}}>Create New Item</Typography>
+            <form className="add-item-form" onSubmit={handleSubmit} style={{backgroundColor: "white"}}>
+                <Typography gutterBottom variant="h5" component="h2" style={{alignSelf: "center"}}>Create New Item</Typography>
                 <TextField type="file" variant="outlined" onChange={handleImage}/>
                 <Button variant="contained" onClick={handleUpload} style={{width: "120px", alignSelf: "center", marginTop: "0.5em"}}>Upload 📸</Button>
                 <TextField label="Nickname" name="nickname" variant="outlined" value={formData.nickname} margin="dense" onChange={handleChange}/>

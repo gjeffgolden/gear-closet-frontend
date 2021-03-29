@@ -68,7 +68,7 @@ export default function FilterButtons({
 
     return (
         <Container maxWidth="xs" style={{margin: "0", display: "flex", flexFlow: "column"}}>
-            <Typography gutterBottom variant="h3" component="h2" style={{alignSelf: "center"}}>Filter By Category</Typography>
+            <Typography gutterBottom variant="h4" component="h2" style={{alignSelf: "center"}}>Filter By Category</Typography>
             <Button variant="contained" onClick={allClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "300px", alignSelf: "center", marginBottom: "0"}}>Show All</Button>
             <Button variant="contained" onClick={upgradeClick} style={{backgroundColor: "#ff914d", margin: "1em", width: "300px", alignSelf: "center", marginBottom: "0"}}>Needs Upgrade or Replacement</Button>
             <Container className="filter-buttons-container" maxWidth="xs" style={{margin: "0", display: "flex"}}>

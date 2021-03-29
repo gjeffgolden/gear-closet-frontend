@@ -11,7 +11,7 @@ export default function Header({ isLoggedIn, logout }) {
     }
 
     return (
-        <Container className="header-container" maxWidth='xl' style={{height: '20vh', backgroundImage: `url(${HeaderBackground})`, backgroundRepeat: 'no-repeat'}}>
+        <Container className="header-container" maxWidth='xl' style={{backgroundImage: `url(${HeaderBackground})`, backgroundRepeat: 'no-repeat'}}>
             <img className="logo" src={LogoGearCloset} alt="Gear Closet Logo" />
             {isLoggedIn
                 ? <Button id="logout-button" variant="contained" size="small" onClick={handleClick}>Logout</Button>

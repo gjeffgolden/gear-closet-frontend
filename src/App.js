@@ -95,6 +95,18 @@ function App() {
     })
   }
 
+  const editItem = (itemToEdit) => {
+    fetch(`http://localhost:8000/items/${selectedItem.id}/`, {
+      method: "PATCH",
+      headers: {
+        'Authorization': `Bearer ${localStorage.token}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(itemToEdit)
+    })
+  }
+
   const showDetails = (selectedItem) => {
     let search = items.find(item => item === selectedItem)
     setSelectedItem(search)
@@ -164,13 +176,14 @@ function App() {
       <div className="app">
         <Header isLoggedIn={isLoggedIn} logout={logout} />
         <Switch> 
-          <Route exact path='/' render={(props) => <Login {...props} login={login} register={register}/>} />
+          <Route exact path='/' render={(props) => <Login {...props} login={login} register={register} isLoggedIn={isLoggedIn}/>} />
           <PrivateRoute path='/user'>
             <UserHome 
               user={user} 
               logout={logout} 
               addItem={addItem} 
               deleteItem={deleteItem}
+              editItem={editItem}
               items={items} 
               setItems={setItems} 
               isLoggedIn={isLoggedIn} 

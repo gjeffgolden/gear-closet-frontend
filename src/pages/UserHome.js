@@ -35,6 +35,7 @@ export default function UserHome(props) {
                 showDetails={props.showDetails} 
                 setToggleDetails={setToggleDetails} 
                 toggleDetails={toggleDetails} 
+                editItem={props.editItem}
             />
         </div>
     )

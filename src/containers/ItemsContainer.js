@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import ItemCard from '../components/ItemCard'
 import ItemDetails from '../components/ItemDetails'
 
-export default function ItemsContainer({ items, showDetails, selectedItem, setToggleDetails, toggleDetails, deleteItem }) {
+export default function ItemsContainer({ items, showDetails, selectedItem, setToggleDetails, toggleDetails, deleteItem, editItem }) {
 
     const displayCards = () => {
         return items.map(item => {
@@ -21,7 +21,7 @@ export default function ItemsContainer({ items, showDetails, selectedItem, setTo
     }
 
     const displayDetails = () => {
-        return <ItemDetails selectedItem={selectedItem} setToggleDetails={setToggleDetails} deleteItem={deleteItem} />
+        return <ItemDetails selectedItem={selectedItem} setToggleDetails={setToggleDetails} deleteItem={deleteItem} editItem={editItem} />
     }
 
     return (

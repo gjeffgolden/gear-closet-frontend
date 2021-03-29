@@ -59,8 +59,8 @@ body {
 .items-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
-  padding-left: 60px;
+  justify-content: center;
+  /* padding-left: 60px; */
   margin-bottom: 50px;
 }
 

@@ -27,6 +27,7 @@ export default function AddItemForm({ userId,
     const [file, setFile] = useState(null)
     const [url, setUrl] = useState("")
     const [isLoading, setIsLoading] = useState(false)
+    const [isUploaded, setIsUploaded] = useState(false)
     const [formData, setFormData] = useState({
         nickname: '',
         brand: '',
@@ -99,6 +100,7 @@ export default function AddItemForm({ userId,
                 setFile(null);
                 setUrl(url);
                 setIsLoading(false)
+                setIsUploaded(true)
             })
         })
     }
@@ -124,7 +126,9 @@ export default function AddItemForm({ userId,
                 <TextField type="file" variant="outlined" onChange={handleImage}/>
                 {isLoading
                     ? <img src={SpinnerGif} alt="loading spinner" style={{height: "41px", width: "41px", alignSelf: "center"}}></img>
-                    : <Button variant="contained" onClick={handleUpload} style={{width: "120px", alignSelf: "center", marginTop: "0.5em"}}>Upload 📸</Button>
+                    : <Button variant="contained" onClick={handleUpload} style={{width: "120px", alignSelf: "center", marginTop: "0.5em"}}>
+                        {isUploaded ? <p style={{margin: "0"}}>Done 🙌</p> : <p style={{margin: "0"}}>Upload 📸</p>}
+                    </Button>
                 }
                 <TextField label="Nickname" name="nickname" variant="outlined" value={formData.nickname} margin="dense" onChange={handleChange}/>
                 <TextField label="Brand" name="brand" variant="outlined" value={formData.brand} margin="dense" onChange={handleChange}/>

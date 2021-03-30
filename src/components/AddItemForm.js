@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography"
 import { storage } from "../firebase/firebase"
 import FilterButtons from './FilterButtons'
 import HeroImage from '../assets/HeroImage.png'
+import SpinnerGif from '../assets/SpinnerGif.gif'
 
 export default function AddItemForm({ userId, 
     addItem, 
@@ -25,6 +26,7 @@ export default function AddItemForm({ userId,
 
     const [file, setFile] = useState(null)
     const [url, setUrl] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
         nickname: '',
         brand: '',
@@ -52,9 +54,9 @@ export default function AddItemForm({ userId,
         "Water",
         "Snow",
         "Pet"
-    ]
-    return choices.map(option => <MenuItem key={option} value={option}>{option}</MenuItem>)
-}
+        ]
+        return choices.map(option => <MenuItem key={option} value={option}>{option}</MenuItem>)
+    }
 
     const conditionChoices = () => {
         let choices = [
@@ -86,6 +88,7 @@ export default function AddItemForm({ userId,
 
     const handleUpload = (event) => {
         event.preventDefault();
+        setIsLoading(true)
         const uploadImg = storage.ref(`/images/${file.name}`).put(file);
         uploadImg.on("state_changed", console.log, console.error, () => {
             storage
@@ -95,6 +98,7 @@ export default function AddItemForm({ userId,
             .then((url) => {
                 setFile(null);
                 setUrl(url);
+                setIsLoading(false)
             })
         })
     }
@@ -118,7 +122,10 @@ export default function AddItemForm({ userId,
             <form className="add-item-form" onSubmit={handleSubmit} style={{backgroundColor: "white"}}>
                 <Typography gutterBottom variant="h5" component="h2" style={{alignSelf: "center"}}>Create New Item</Typography>
                 <TextField type="file" variant="outlined" onChange={handleImage}/>
-                <Button variant="contained" onClick={handleUpload} style={{width: "120px", alignSelf: "center", marginTop: "0.5em"}}>Upload 📸</Button>
+                {isLoading
+                    ? <img src={SpinnerGif} alt="loading spinner" style={{height: "41px", width: "41px", alignSelf: "center"}}></img>
+                    : <Button variant="contained" onClick={handleUpload} style={{width: "120px", alignSelf: "center", marginTop: "0.5em"}}>Upload 📸</Button>
+                }
                 <TextField label="Nickname" name="nickname" variant="outlined" value={formData.nickname} margin="dense" onChange={handleChange}/>
                 <TextField label="Brand" name="brand" variant="outlined" value={formData.brand} margin="dense" onChange={handleChange}/>
                 <TextField label="Model" name="model_name" variant="outlined" value={formData.model_name} margin="dense" onChange={handleChange}/>

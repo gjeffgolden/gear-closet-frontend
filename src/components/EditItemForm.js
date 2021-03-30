@@ -68,7 +68,7 @@ export default function EditItemForm({ selectedItem, editItem }) {
                 <TextField label="Condition" select name="condition" variant="outlined" value={formData.condition} margin="dense" onChange={handleChange}>
                     {conditionChoices()}
                 </TextField>
-                <TextField label="Category" select name="item_type" variant="outlined" value={formData.item_type} margin="dense" onChange={handleChange}>
+                <TextField label="Category" select name="item_type" variant="outlined" style={{minWidth: "80px"}} value={formData.item_type} margin="dense" onChange={handleChange}>
                     {categoryChoices()}
                 </TextField>
                 <TextField label="Rating" placeholder="Rating" select name="rating" type="number" variant="outlined" margin="dense" value={formData.rating} onChange={handleChange}>

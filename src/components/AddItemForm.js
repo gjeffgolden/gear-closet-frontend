@@ -147,7 +147,14 @@ export default function AddItemForm({ userId,
                     <MenuItem value="4">4</MenuItem>
                     <MenuItem value="5">5</MenuItem>
                 </TextField>
-                <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em"}}>Add</Button>
+                {isUploaded
+                    ? <Button type="submit" variant="contained" style={{backgroundColor: "#ff914d", margin: "1em"}}>Add</Button>
+                    : <Button type="submit" disabled={true} variant="contained" style={{backgroundColor: "#ff914d", margin: "1em"}}>Add</Button>
+                }
+                {isUploaded
+                    ? null
+                    : <Typography gutterBottom variant="body2" component="h2" style={{alignSelf: "center", color: "red"}}>Image required.</Typography>
+                }
             </form>
         </div>
     )

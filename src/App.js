@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import PrivateRoute from './components/PrivateRoute'
 import Header from './components/Header'
 import UserHome from './pages/UserHome'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -204,6 +205,7 @@ function App() {
             />
           </PrivateRoute>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

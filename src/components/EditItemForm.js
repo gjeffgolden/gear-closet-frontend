@@ -65,7 +65,7 @@ export default function EditItemForm({ selectedItem, editItem }) {
                 <TextField label="Brand" name="brand" variant="outlined" value={formData.brand} margin="dense" onChange={handleChange}/>
                 <TextField label="Model" name="model_name" variant="outlined" value={formData.model_name} margin="dense" onChange={handleChange}/>
                 <TextField label="Year" name="model_year" type="number" variant="outlined" margin="dense" value={formData.model_year} onChange={handleChange} />
-                <TextField label="Condition" select name="condition" variant="outlined" value={formData.condition} margin="dense" onChange={handleChange}>
+                <TextField label="Condition" select name="condition" variant="outlined" value={formData.condition} margin="dense" style={{minWidth: "80px"}} onChange={handleChange}>
                     {conditionChoices()}
                 </TextField>
                 <TextField label="Category" select name="item_type" variant="outlined" style={{minWidth: "80px"}} value={formData.item_type} margin="dense" onChange={handleChange}>

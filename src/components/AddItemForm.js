@@ -11,17 +11,9 @@ import SpinnerGif from '../assets/SpinnerGif.gif'
 export default function AddItemForm({ userId, 
     addItem, 
     showAllItems, 
-    filterClimbing,
     filterApparel,
-    filterFootwear,
-    filterHiking,
-    filterCamping,
-    filterAccessories,
-    filterBiking,
-    filterSnow,
-    filterWater,
-    filterPet,
-    filterNeedsUpgrade
+    filterNeedsUpgrade,
+    refactoredFilter
 }) {
 
     const [file, setFile] = useState(null)
@@ -109,17 +101,9 @@ export default function AddItemForm({ userId,
         <div className="add-item-container" style={{marginTop: "25px", backgroundImage: `url(${HeroImage})`, width: "100vw"}}>
             <FilterButtons 
                 showAllItems={showAllItems} 
-                filterClimbing={filterClimbing} 
                 filterApparel={filterApparel}
-                filterFootwear={filterFootwear}
-                filterAccessories={filterAccessories}
-                filterHiking={filterHiking}
-                filterCamping={filterCamping}
-                filterBiking={filterBiking}
-                filterSnow={filterSnow}
-                filterWater={filterWater}
-                filterPet={filterPet}
                 filterNeedsUpgrade={filterNeedsUpgrade}
+                refactoredFilter={refactoredFilter}
             />
             <form className="add-item-form" onSubmit={handleSubmit} style={{backgroundColor: "white"}}>
                 <Typography gutterBottom variant="h5" component="h2" style={{alignSelf: "center"}}>Create New Item</Typography>

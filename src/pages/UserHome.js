@@ -19,17 +19,9 @@ export default function UserHome(props) {
                     userId={props.user.id} 
                     addItem={props.addItem} 
                     showAllItems={props.showAllItems} 
-                    filterClimbing={props.filterClimbing}
                     filterApparel={props.filterApparel}
-                    filterFootwear={props.filterFootwear}
-                    filterAccessories={props.filterAccessories}
-                    filterHiking={props.filterHiking}
-                    filterCamping={props.filterCamping}
-                    filterBiking={props.filterBiking}
-                    filterSnow={props.filterSnow}
-                    filterWater={props.filterWater}
-                    filterPet={props.filterPet}
                     filterNeedsUpgrade={props.filterNeedsUpgrade}
+                    refactoredFilter={props.refactoredFilter}
                 />
             }
             <ItemsContainer 

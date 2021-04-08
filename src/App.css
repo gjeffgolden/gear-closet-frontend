@@ -57,20 +57,20 @@ body {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .items-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .item-card {
   width: 200px;
   height: 225px;
-  margin: 0.5em;
+  margin: 0.5rem;
   text-align: center;
 }
 
@@ -83,7 +83,7 @@ body {
   padding-right: 1rem;
   padding-bottom: 0.25rem;
   padding-top: 0.25rem;
-  margin: 10px;
+  margin: 0.625rem;
 }
 
 .add-item-form > h3 {
@@ -94,7 +94,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
   border-bottom: solid 1px black;
 }
 

@@ -16,7 +16,7 @@ body {
 
 #logout-button {
   margin-left: 90vw;
-  margin-top: 7rem;
+  margin-top: 6rem;
   background-color: #015579;
   color: white;
   border-color: #015579;
@@ -27,7 +27,7 @@ body {
   display: grid;
   min-height: 140px;
   align-self: center;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: solid 1px black;
 }

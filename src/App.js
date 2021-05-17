@@ -26,6 +26,7 @@ function App() {
         })
         .then(response => response.json())
         .then(results => {
+            console.log(results)
             setUser(results)
             setItems(results.items)
             setAllItems(results.items)
